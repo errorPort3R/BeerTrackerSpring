@@ -54,13 +54,16 @@ public class BeerTrackerController {
             if (search != null)
             {
                 model.addAttribute("beers", beers.searchByName(search));
-            } else if (type != null && calories != null)
+            }
+            else if (type != null && calories != null)
             {
                 model.addAttribute("beers", beers.findByTypeAndCaloriesIsLessThanEqual(type, calories));
-            } else if (type != null)
+            }
+            else if (type != null)
             {
                 model.addAttribute("beers", beers.findByTypeOrderByNameAsc(type));
-            } else
+            }
+            else
             {
                 model.addAttribute("beers", beers.findAll());
             }
